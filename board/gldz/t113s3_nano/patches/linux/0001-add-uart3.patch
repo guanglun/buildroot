@@ -1,0 +1,14 @@
+--- a/arch/riscv/boot/dts/allwinner/sunxi-d1s-t113.dtsi	2026-01-30 17:32:28.000000000 +0800
++++ b/arch/riscv/boot/dts/allwinner/sunxi-d1s-t113.dtsi	2026-04-03 14:13:53.567877424 +0800
+@@ -191,6 +191,11 @@
+ 				pins = "PB6", "PB7";
+ 				function = "uart3";
+ 			};
++
++			uart3_pd_pins: uart3-pd-pins {
++				pins = "PD10", "PD11";
++				function = "uart3";
++			};
+ 		};
+ 
+ 		ccu: clock-controller@2001000 {

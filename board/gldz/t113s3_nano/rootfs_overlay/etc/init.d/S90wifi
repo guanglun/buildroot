@@ -1,0 +1,15 @@
+#!/bin/sh
+
+(
+while true
+do
+    if ip link show wlan0 >/dev/null 2>&1
+    then
+        ip link set wlan0 up
+        wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant.conf
+        udhcpc -i wlan0
+        exit 0
+    fi
+    sleep 2
+done
+) &

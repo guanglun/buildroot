@@ -1,0 +1,35 @@
+--- a/arch/arm/boot/dts/allwinner/sunxi-d1s-t113-mangopi-mq-r.dtsi	2026-01-30 17:32:28.000000000 +0800
++++ b/arch/arm/boot/dts/allwinner/sunxi-d1s-t113-mangopi-mq-r.dtsi	2026-04-03 14:33:40.927482288 +0800
+@@ -20,9 +20,15 @@
+ 		compatible = "gpio-leds";
+ 
+ 		led-0 {
++			color = <LED_COLOR_ID_RED>;
++			function = LED_FUNCTION_POWER;
++			gpios = <&pio 6 13 GPIO_ACTIVE_LOW>; /* PG13 */
++		};
++
++		led-1 {
+ 			color = <LED_COLOR_ID_BLUE>;
+ 			function = LED_FUNCTION_STATUS;
+-			gpios = <&pio 3 22 GPIO_ACTIVE_LOW>; /* PD22 */
++			gpios = <&pio 1 5 GPIO_ACTIVE_LOW>; /* PB5 */
+ 		};
+ 	};
+ 
+@@ -110,13 +116,13 @@
+ 
+ &uart3 {
+ 	pinctrl-names = "default";
+-	pinctrl-0 = <&uart3_pb_pins>;
++	pinctrl-0 = <&uart3_pd_pins>;
+ 	status = "okay";
+ };
+ 
+ /* The USB-C socket has its CC pins pulled to GND, so is hardwired as a UFP. */
+ &usb_otg {
+-	dr_mode = "peripheral";
++	dr_mode = "host";
+ 	status = "okay";
+ };
+ 

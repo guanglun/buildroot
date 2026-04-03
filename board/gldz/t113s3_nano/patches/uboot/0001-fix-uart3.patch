@@ -1,0 +1,15 @@
+--- a/arch/arm/mach-sunxi/board.c	2026-01-06 04:49:22.000000000 +0800
++++ b/arch/arm/mach-sunxi/board.c	2026-04-03 16:57:40.688867054 +0800
+@@ -178,9 +178,9 @@ static int gpio_init(void)
+ 	sunxi_gpio_set_cfgpin(SUNXI_GPB(1), SUN8I_GPB_UART2);
+ 	sunxi_gpio_set_pull(SUNXI_GPB(1), SUNXI_GPIO_PULL_UP);
+ #elif CONFIG_CONS_INDEX == 4 && defined(CONFIG_MACH_SUN8I_R528)
+-	sunxi_gpio_set_cfgpin(SUNXI_GPB(6), 7);
+-	sunxi_gpio_set_cfgpin(SUNXI_GPB(7), 7);
+-	sunxi_gpio_set_pull(SUNXI_GPB(7), SUNXI_GPIO_PULL_UP);
++	sunxi_gpio_set_cfgpin(SUNXI_GPD(10), 5);
++	sunxi_gpio_set_cfgpin(SUNXI_GPD(11), 5);
++	sunxi_gpio_set_pull(SUNXI_GPD(11), SUNXI_GPIO_PULL_UP);
+ #elif CONFIG_CONS_INDEX == 5 && defined(CONFIG_MACH_SUN8I)
+ 	sunxi_gpio_set_cfgpin(SUNXI_GPL(2), SUN8I_GPL_R_UART);
+ 	sunxi_gpio_set_cfgpin(SUNXI_GPL(3), SUN8I_GPL_R_UART);
